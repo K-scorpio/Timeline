@@ -12,6 +12,15 @@ import CoreData
 
 class Comment: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
-
+    convenience init?(post: Post, text: String, timestamp: NSDate, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+        
+        guard let entity = NSEntityDescription.entityForName("Comment", inManagedObjectContext: context) else {
+            return nil
+        }
+        self.init(entity: entity, insertIntoManagedObjectContext: context)
+        
+        self.post = post
+        self.text = text
+        self.timestamp = timestamp
+    }
 }

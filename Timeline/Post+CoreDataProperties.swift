@@ -14,8 +14,8 @@ import CoreData
 
 extension Post {
 
-    @NSManaged var timestamp: NSDate?
-    @NSManaged var photoData: NSData?
-    @NSManaged var comments: NSOrderedSet?
+    @NSManaged var timestamp: NSDate
+    @NSManaged var photoData: NSData
+    @NSManaged var comments: NSOrderedSet
 
 }

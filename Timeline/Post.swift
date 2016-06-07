@@ -11,7 +11,14 @@ import CoreData
 
 
 class Post: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
-
+    
+    convenience init?(photo: NSData, timestamp: NSDate, caption: String, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+        guard let entity = NSEntityDescription.entityForName("Post", inManagedObjectContext: context) else {
+            return nil
+        }
+        self.init(entity: entity, insertIntoManagedObjectContext: context)
+        
+        self.photoData = photo
+        self.timestamp = timestamp
+    }
 }
