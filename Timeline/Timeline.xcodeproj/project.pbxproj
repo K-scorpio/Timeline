@@ -21,6 +21,7 @@
 		E26018EB1D063CEB0012505D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26018E71D063CEB0012505D /* Comment.swift */; };
 		E26018ED1D0640A20012505D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26018EC1D0640A20012505D /* User.swift */; };
 		E26018EF1D066B1B0012505D /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26018EE1D066B1B0012505D /* PostController.swift */; };
+		E2AB9CA61D08840B00A1BF10 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AB9CA51D08840B00A1BF10 /* CloudKitManager.swift */; };
 		E2C51BDA1D0767F40089021F /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C51BD91D0767F40089021F /* UserController.swift */; };
 		E2C51BDC1D0788850089021F /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C51BDB1D0788850089021F /* AddPostTableViewController.swift */; };
 		E2C51BDE1D0788A20089021F /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C51BDD1D0788A20089021F /* SearchTableViewController.swift */; };
@@ -46,6 +47,7 @@
 		E26018E71D063CEB0012505D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		E26018EC1D0640A20012505D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E26018EE1D066B1B0012505D /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostController.swift; path = ../PostController.swift; sourceTree = "<group>"; };
+		E2AB9CA51D08840B00A1BF10 /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		E2C51BD91D0767F40089021F /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		E2C51BDB1D0788850089021F /* AddPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
 		E2C51BDD1D0788A20089021F /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				E26018EE1D066B1B0012505D /* PostController.swift */,
 				E2C51BD91D0767F40089021F /* UserController.swift */,
+				E2AB9CA51D08840B00A1BF10 /* CloudKitManager.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				E2C51BE21D0788C10089021F /* UserSetupTableViewController.swift in Sources */,
 				E26018EA1D063CEB0012505D /* Comment+CoreDataProperties.swift in Sources */,
 				E26018D61D05F7750012505D /* PostListTableViewController.swift in Sources */,
+				E2AB9CA61D08840B00A1BF10 /* CloudKitManager.swift in Sources */,
 				E26018EF1D066B1B0012505D /* PostController.swift in Sources */,
 				E26018D81D0619560012505D /* PostDetailTableViewController.swift in Sources */,
 				E2C51BDA1D0767F40089021F /* UserController.swift in Sources */,

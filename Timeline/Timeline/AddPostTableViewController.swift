@@ -13,6 +13,8 @@ class AddPostTableViewController: UITableViewController {
      var image: UIImage?
     
     @IBOutlet weak var captionTextField: UITextField!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,13 +48,12 @@ class AddPostTableViewController: UITableViewController {
         
         if segue.identifier == "embedPhotoSelect" {
             
-            let embedViewController = segue.destinationViewController as? PhotoSelectViewController
-            embedViewController?.delegate = self
+            _ = segue.destinationViewController
         }
     }
 }
 
-extension AddPostTableViewController: PhotoSelectViewControllerDelegate {
+extension AddPostTableViewController {
     
     func photoSelectViewControllerSelected(image: UIImage) {
         

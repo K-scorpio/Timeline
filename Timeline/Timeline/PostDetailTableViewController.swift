@@ -11,7 +11,8 @@ import CoreData
 
 class PostDetailTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var myImageView: UIImageView!
+
     
     let postController = PostController()
     
@@ -33,7 +34,7 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
     
     func updateWithPost(post: Post) {
         
-        imageView.image = post.photo
+        myImageView.image = post.photo
     }
 
     // MARK: - Table view data source
