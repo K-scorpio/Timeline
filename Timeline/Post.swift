@@ -6,11 +6,14 @@
 //  Copyright © 2016 Hartley Development. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 
 class Post: NSManagedObject {
+    
+    private let timestampKey = "timestamp"
+    private let photoDataKey = "photoData"
     
     convenience init?(photo: NSData, timestamp: NSDate, caption: String, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         guard let entity = NSEntityDescription.entityForName("Post", inManagedObjectContext: context) else {
@@ -20,5 +23,12 @@ class Post: NSManagedObject {
         
         self.photoData = photo
         self.timestamp = timestamp
+    }
+    
+    var photo: UIImage? {
+        
+        let photoData = self.photoData
+        
+        return UIImage(data: photoData)
     }
 }
