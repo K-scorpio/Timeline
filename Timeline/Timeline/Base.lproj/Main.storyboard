@@ -491,7 +491,6 @@
                     <connections>
                         <outlet property="addPhotoButton" destination="Fvy-0v-Ccg" id="Xbs-W6-mur"/>
                         <outlet property="myImageView" destination="VC4-71-8DN" id="RTi-zY-j65"/>
-                        <outlet property="profileImageView" destination="VC4-71-8DN" id="Zer-C0-b4a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHe-zE-hwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
