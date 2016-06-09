@@ -25,6 +25,7 @@
 		E2AB9CA81D08E28E00A1BF10 /* AccountSetupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AB9CA71D08E28E00A1BF10 /* AccountSetupTableViewController.swift */; };
 		E2AB9CAA1D0901F700A1BF10 /* PhotoSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AB9CA91D0901F700A1BF10 /* PhotoSelectViewController.swift */; };
 		E2AB9CAC1D09BCDD00A1BF10 /* SearchableRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AB9CAB1D09BCDD00A1BF10 /* SearchableRecord.swift */; };
+		E2AB9CAE1D09CF0400A1BF10 /* CloudKitManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AB9CAD1D09CF0400A1BF10 /* CloudKitManagedObject.swift */; };
 		E2C51BDA1D0767F40089021F /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C51BD91D0767F40089021F /* UserController.swift */; };
 		E2C51BDC1D0788850089021F /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C51BDB1D0788850089021F /* AddPostTableViewController.swift */; };
 		E2C51BDE1D0788A20089021F /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C51BDD1D0788A20089021F /* SearchTableViewController.swift */; };
@@ -54,6 +55,7 @@
 		E2AB9CA71D08E28E00A1BF10 /* AccountSetupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSetupTableViewController.swift; sourceTree = "<group>"; };
 		E2AB9CA91D0901F700A1BF10 /* PhotoSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSelectViewController.swift; sourceTree = "<group>"; };
 		E2AB9CAB1D09BCDD00A1BF10 /* SearchableRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableRecord.swift; sourceTree = "<group>"; };
+		E2AB9CAD1D09CF0400A1BF10 /* CloudKitManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManagedObject.swift; sourceTree = "<group>"; };
 		E2C51BD91D0767F40089021F /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		E2C51BDB1D0788850089021F /* AddPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
 		E2C51BDD1D0788A20089021F /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				E26018EE1D066B1B0012505D /* PostController.swift */,
+				E2AB9CAD1D09CF0400A1BF10 /* CloudKitManagedObject.swift */,
 				E2C51BD91D0767F40089021F /* UserController.swift */,
 				E2AB9CA51D08840B00A1BF10 /* CloudKitManager.swift */,
 			);
@@ -238,6 +241,7 @@
 				E2AB9CA81D08E28E00A1BF10 /* AccountSetupTableViewController.swift in Sources */,
 				E26018E81D063CEB0012505D /* Post+CoreDataProperties.swift in Sources */,
 				E2C51BE01D0788B30089021F /* SearchResultTableViewController.swift in Sources */,
+				E2AB9CAE1D09CF0400A1BF10 /* CloudKitManagedObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
