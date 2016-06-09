@@ -38,22 +38,25 @@ class AddPostTableViewController: UITableViewController {
             presentViewController(alertController, animated: true, completion: nil)
         }
     }
-
+    
     @IBAction func cancelButtonTapped(sender: AnyObject) {
         
-         dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
+    // MARK: - Navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "embedPhotoSelect" {
             
-            _ = segue.destinationViewController
+            let embedViewController = segue.destinationViewController as? PhotoSelectViewController
+            embedViewController?.delegate = self
         }
     }
 }
 
-extension AddPostTableViewController {
+extension AddPostTableViewController: PhotoSelectViewControllerDelegate {
     
     func photoSelectViewControllerSelected(image: UIImage) {
         

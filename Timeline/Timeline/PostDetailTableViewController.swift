@@ -12,14 +12,14 @@ import CoreData
 class PostDetailTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var myImageView: UIImageView!
-
+    
     
     let postController = PostController()
     
     var post: Post?
     
     var fetchedResultsController: NSFetchedResultsController?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,21 +29,21 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
         }
         
         setUpFetchedResultsController()
-
+        
     }
     
     func updateWithPost(post: Post) {
         
         myImageView.image = post.photo
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         guard let sections = fetchedResultsController?.sections else { return 1 }
         return sections.count
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sections = fetchedResultsController?.sections else { return 0 }
         let sectionInfo = sections[section]
@@ -76,7 +76,6 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
         request.sortDescriptors = [dateSortDescription]
         
         self.fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: Stack.sharedStack.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        
         do {
             try fetchedResultsController?.performFetch()
         } catch let error as NSError {
@@ -123,14 +122,14 @@ class PostDetailTableViewController: UITableViewController, NSFetchedResultsCont
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         tableView.endUpdates()
     }
-
+    
     @IBAction func followUserButtonTapped(sender: AnyObject) {
     }
     
     @IBAction func commentButtonTapped(sender: AnyObject) {
         presentCommentAlert()
     }
-
+    
     @IBAction func shareButtonTapped(sender: AnyObject) {
         presentActivityViewController()
     }
