@@ -165,7 +165,7 @@
                     <navigationItem key="navigationItem" id="El5-dm-L27">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="li6-Ks-c8W">
                             <connections>
-                                <segue destination="PY7-o2-uoO" kind="presentation" id="vAn-YX-bEt"/>
+                                <segue destination="PY7-o2-uoO" kind="presentation" identifier="toAddPost" id="vAn-YX-bEt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -287,12 +287,15 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="363"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hHx-zT-Mgd">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="318"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hHx-zT-Mgd">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="319"/>
                                     <color key="backgroundColor" red="1" green="0.0" blue="0.020532956710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="hHx-zT-Mgd" secondAttribute="height" multiplier="600:319" id="Sq2-nJ-gTX"/>
+                                    </constraints>
                                 </imageView>
-                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TjS-MQ-m3K">
-                                    <rect key="frame" x="0.0" y="318" width="600" height="45"/>
+                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjS-MQ-m3K">
+                                    <rect key="frame" x="0.0" y="319" width="600" height="44"/>
                                     <items>
                                         <barButtonItem title="Comment" id="37W-q5-l26"/>
                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="dAa-LG-vW3"/>
@@ -302,6 +305,12 @@
                                     </items>
                                 </toolbar>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="hHx-zT-Mgd" firstAttribute="top" secondItem="ZB5-vG-svj" secondAttribute="top" id="3C8-xe-OUt"/>
+                                <constraint firstAttribute="trailing" secondItem="hHx-zT-Mgd" secondAttribute="trailing" id="fD0-Zp-aev"/>
+                                <constraint firstItem="TjS-MQ-m3K" firstAttribute="top" secondItem="hHx-zT-Mgd" secondAttribute="bottom" id="s9i-EP-F9b"/>
+                                <constraint firstItem="hHx-zT-Mgd" firstAttribute="leading" secondItem="ZB5-vG-svj" secondAttribute="leading" id="yE5-pd-RaO"/>
+                            </constraints>
                         </stackView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="459" id="aYO-Qn-bgR">
