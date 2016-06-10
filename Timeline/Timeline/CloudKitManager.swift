@@ -17,6 +17,11 @@ class CloudKitManager {
     
     //MARK: - User Info Discovery
     
+    init() {
+        checkCloudKitAvailability()
+        requestDiscoverabilityPermission()
+    }
+    
     func fetchLoggedInUserRecord(completion: ((record: CKRecord?, error: NSError?) -> Void)?) {
         CKContainer.defaultContainer().fetchUserRecordIDWithCompletionHandler { (recordID, error) in
             if let error = error,

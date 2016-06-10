@@ -16,7 +16,7 @@ class Post: NSManagedObject, CloudKitManagedObject {
     private let timestampKey = "timestamp"
     private let photoDataKey = "photoData"
     
-    convenience init(photo: NSData, timestamp: NSDate, caption: String, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+    convenience init(photo: NSData, timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         guard let entity = NSEntityDescription.entityForName("Post", inManagedObjectContext: context) else {
             fatalError("Error: Core Data failed to create entity from entity description")
         }
@@ -24,15 +24,54 @@ class Post: NSManagedObject, CloudKitManagedObject {
         
         self.photoData = photo
         self.timestamp = timestamp
-        self.recordName = self.managedObjectContext
+        self.recordName = self.nameForManagedObject()
     }
     
     var photo: UIImage? {
         
-        let photoData = self.photoData
-        
+        guard let photoData = self.photoData else { return nil }
         return UIImage(data: photoData)
     }
     
+    lazy var temporaryPhotoURL: NSURL = {
+        let temporaryDirectory = NSTemporaryDirectory()
+        let temporaryDirectoryURL = NSURL(fileURLWithPath: temporaryDirectory)
+        let fileURL = temporaryDirectoryURL.URLByAppendingPathComponent(NSUUID().UUIDString).URLByAppendingPathExtension("jpg")
+        self.photoData?.writeToURL(fileURL, atomically: true)
+        return fileURL
+    }()
     
+    //MARK: - Cloud Kit MOC
+    
+    var recordType: String = "Post"
+    
+    var cloudKitRecord: CKRecord? {
+        let recordID = CKRecordID(recordName: recordName)
+        let record = CKRecord(recordType: recordType, recordID: recordID)
+        
+        record[timestampKey] = timestamp
+        record[photoDataKey] = CKAsset(fileURL: temporaryPhotoURL)
+        
+        return record
+    }
+    
+    convenience init?(record: CKRecord, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+        guard let timestamp = record.creationDate,
+            let photoData = record["photoData"] as? CKAsset else {
+                return nil
+        }
+        guard let entity = NSEntityDescription.entityForName("Post", inManagedObjectContext: context) else {
+            fatalError("AHHHHHHH!!!!!!")
+        }
+        self.init(entity: entity, insertIntoManagedObjectContext: context)
+        self.timestamp = timestamp
+        self.photoData = NSData(contentsOfURL: photoData.fileURL)
+        self.recordIDData = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
+        self.recordName = record.recordID.recordName
+        
+    }
+    
+    func updateWithRecord(record: CKRecord) {
+        self.recordIDData = NSKeyedArchiver.archivedDataWithRootObject(record)
+    }
 }
