@@ -11,7 +11,7 @@ import CoreData
 import CloudKit
 
 
-class Post: NSManagedObject, CloudKitManagedObject {
+class Post: NSManagedObject, CloudKitManagedObject, SearchableRecord {
     
     private let timestampKey = "timestamp"
     private let photoDataKey = "photoData"
@@ -73,5 +73,14 @@ class Post: NSManagedObject, CloudKitManagedObject {
     
     func updateWithRecord(record: CKRecord) {
         self.recordIDData = NSKeyedArchiver.archivedDataWithRootObject(record)
+    }
+    
+    func matchesSearchTerm(searchTerm: String) -> Bool {
+        if let comments = self.comments.array as? [Comment] {
+            let filteredComments = comments.filter({$0.matchesSearchTerm(searchTerm)})
+            return filteredComments.count > 0
+        } else {
+            return false
+        }
     }
 }

@@ -335,21 +335,32 @@
             </objects>
             <point key="canvasLocation" x="2517" y="224"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Search Results Table View Controller-->
         <scene sceneID="ZDt-ZZ-5QE">
             <objects>
-                <tableViewController id="mM8-7Y-zUY" sceneMemberID="viewController">
+                <tableViewController id="mM8-7Y-zUY" customClass="SearchResultsTableViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="a92-5a-Tpx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5DQ-Q0-T5H">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="5DQ-Q0-T5H">
+                                <rect key="frame" x="0.0" y="28" width="600" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5DQ-Q0-T5H" id="aPc-ca-Tji">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NQn-q8-sZQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="NQn-q8-sZQ" firstAttribute="top" secondItem="aPc-ca-Tji" secondAttribute="top" id="ENY-cN-3ZZ"/>
+                                        <constraint firstItem="NQn-q8-sZQ" firstAttribute="centerY" secondItem="aPc-ca-Tji" secondAttribute="centerY" id="Pgo-On-UmY"/>
+                                        <constraint firstItem="NQn-q8-sZQ" firstAttribute="leading" secondItem="aPc-ca-Tji" secondAttribute="leading" id="S5i-BA-NVD"/>
+                                        <constraint firstAttribute="trailing" secondItem="NQn-q8-sZQ" secondAttribute="trailing" id="rEw-8f-hX5"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -382,21 +393,32 @@
             </objects>
             <point key="canvasLocation" x="1103" y="224"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Search Table View Controller-->
         <scene sceneID="Bvu-rI-aVg">
             <objects>
-                <tableViewController id="8m6-Uu-6lR" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cyS-dN-R0D">
+                <tableViewController id="8m6-Uu-6lR" customClass="SearchTableViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="301" sectionHeaderHeight="28" sectionFooterHeight="28" id="cyS-dN-R0D">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3Fs-ry-wqD">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="3Fs-ry-wqD">
+                                <rect key="frame" x="0.0" y="92" width="600" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Fs-ry-wqD" id="qhe-DP-JvW">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T11-Qw-8A3">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="T11-Qw-8A3" firstAttribute="leading" secondItem="qhe-DP-JvW" secondAttribute="leading" id="1wc-t0-fX0"/>
+                                        <constraint firstAttribute="trailing" secondItem="T11-Qw-8A3" secondAttribute="trailing" id="53G-Yt-xds"/>
+                                        <constraint firstItem="T11-Qw-8A3" firstAttribute="centerY" secondItem="qhe-DP-JvW" secondAttribute="centerY" id="Kfh-zu-8kO"/>
+                                        <constraint firstItem="T11-Qw-8A3" firstAttribute="top" secondItem="qhe-DP-JvW" secondAttribute="top" id="mas-Se-qLK"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

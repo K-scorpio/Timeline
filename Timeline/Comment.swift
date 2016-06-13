@@ -11,7 +11,7 @@ import CoreData
 import CloudKit
 
 
-class Comment: NSManagedObject, CloudKitManagedObject {
+class Comment: NSManagedObject, CloudKitManagedObject, SearchableRecord {
     
     private let textKey = "text"
     private let timestampKey = "timestamp"
@@ -65,8 +65,15 @@ class Comment: NSManagedObject, CloudKitManagedObject {
 
         self.post = PostController.sharedInstance.postWithName(postReference.recordID.recordName)
     }
-    
     func updateWithRecord(record: CKRecord) {
         self.recordIDData = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
+    }
+    
+    func matchesSearchTerm(searchTerm: String) -> Bool {
+        if text.containsString(searchTerm) {
+            return true
+        } else {
+            return false
+        }
     }
 }
